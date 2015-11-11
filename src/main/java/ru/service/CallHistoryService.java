@@ -1,6 +1,6 @@
 package ru.service;
 
-import com.sun.istack.internal.NotNull;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 import ru.db.entities.CallHistory;
 import ru.db.entities.User;
