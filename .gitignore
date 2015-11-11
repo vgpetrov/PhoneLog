@@ -39,6 +39,8 @@ Thumbs.db
 # Additional #
 out
 gradle
+build
 *.ipr
 *.iml
 *.iws
+.gradle
