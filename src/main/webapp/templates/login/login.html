@@ -1,0 +1,13 @@
+<form> <!--name="form" action="/login" method="post"-->
+    <fieldset>
+        <legend>Please Login {{p}}  some message {{message}}</legend>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" ng-model="name"/>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" ng-model="pass">
+        <div class="form-actions">
+            <input type="button" value="Start" ng-click="login()"/>
+            <input type="button" value="Create User" ng-click="createUser()"/>
+        </div>
+    </fieldset>
+</form>
