@@ -7,10 +7,16 @@
         data.login = function(name, password) {
             var deferred = $q.defer();
 
+            var requestData = {
+                'username': name,
+                'password': password
+            };
+
             $http({
                 method: 'POST',
                 url: '/login',
-                data: "username=" + name+"&password="+password,
+                //params: requestData,
+                data: "username="+ name+"&password="+password,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function(data, status, headers, config) {
                 deferred.resolve(data);
@@ -36,14 +42,20 @@
             return deferred.promise;
         };
 
-        data.register = function(name, password) {
+        data.register = function(name, password, grecaptcha) {
             var deferred = $q.defer();
 
+            var requestData = {
+                'name': name,
+                'password': password,
+                'grecaptcha': grecaptcha
+            };
+
             $http({
-                method: 'GET',
-                url: '/registerUser',
-                data: "name=" + name+"&password="+password,
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                method: 'POST',
+                url: '/register',
+                params: requestData
+                //data: "name=" + name+"&password="+password +"&grecapthca="+grecaptcha
             }).success(function(data, status, headers, config) {
                 deferred.resolve(data);
             }).error(function(data, status, headers, config) {

@@ -107,10 +107,14 @@ app.controller('RegisterUserController', function($scope, LoginService) {
     $scope.password = "";
 
     $scope.register = function() {
-        LoginService.register($scope.name, $scope.password).then(function(data) {
+        LoginService.register($scope.name, $scope.password, grecaptcha.getResponse()).then(function(data) {
             console.log(data);
         });
-    }
+    };
+
+    grecaptcha.render('html_element', {
+        'sitekey' : '6LdRxRATAAAAAP7nzkllv617hPxvxJ5PrNmtvVx-'
+    });
 });
 
 

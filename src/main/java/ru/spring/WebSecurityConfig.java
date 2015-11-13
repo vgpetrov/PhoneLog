@@ -114,6 +114,7 @@ public class WebSecurityConfig {
                     .antMatchers("/").permitAll()
                     .antMatchers("/js/**").permitAll()
                     .antMatchers("/templates/**").permitAll()
+                    .antMatchers("/register/**").permitAll()
                     .antMatchers("/web/**").access("hasRole('ROLE_USER')")
                     .and()
                     .formLogin().loginPage("/login").permitAll()
