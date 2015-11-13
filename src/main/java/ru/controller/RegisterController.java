@@ -31,6 +31,7 @@ public class RegisterController {
     @ResponseBody
     public User createUser(@RequestParam("name") String name,
                            @RequestParam("password") String password,
+                           @RequestParam("grecaptcha") String grecaptcha) {
         Optional<User> user = userService.save(name, password, grecaptcha);
         return user.orElse(null);
     }
